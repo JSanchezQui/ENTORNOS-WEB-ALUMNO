@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Servicios - Portal de Soporte Técnico y Servicios TI</title>
+    <meta name="description" content="Portal corporativo de Nova Servicios para consulta de servicios TI, seguimiento de tickets ficticios y registro de solicitudes de soporte.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Enlace de accesibilidad para navegación por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Encabezado y Navegación -->
+    <header class="header">
+        <div class="header-container">
+            <span class="logo">Nova Servicios</span>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+            <nav id="main-nav" class="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#soporte">Solicitud</a></li>
+                    <li><a href="#estados">Estados</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#soporte" class="nav-btn">Solicitar soporte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- 1. Presentación Principal (Inicio) -->
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <h1>Nova Servicios - Soluciones Integrales de TI</h1>
+                <p>Ofrecemos atención técnica especializada, mantenimiento de infraestructura y gestión de incidentes operacionales para garantizar la continuidad empresarial.</p>
+                <a href="#soporte" class="btn btn-primary">Solicitar soporte</a>
+            </div>
+        </section>
+
+        <!-- 2. Catálogo de Servicios (4 Tarjetas) -->
+        <section id="servicios" class="services-section container">
+            <h2>Catálogo de Servicios</h2>
+            <div class="services-grid">
+                <article class="card">
+                    <h3>Soporte e Infraestructura</h3>
+                    <p>Atención y solución de incidencias en estaciones de trabajo, impresoras de red y diagnósticos de hardware.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte sobre este servicio</a>
+                </article>
+
+                <article class="card">
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Optimización periódica de sistemas, depuración de archivos y parches de actualización de software.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte sobre este servicio</a>
+                </article>
+
+                <article class="card">
+                    <h3>Redes y Conectividad</h3>
+                    <p>Configuración de switches, routers, VLANs y solución de problemas de conexión corporativa o VPN.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte sobre este servicio</a>
+                </article>
+
+                <article class="card">
+                    <h3>Seguridad y Gestión Cloud</h3>
+                    <p>Administración de cuentas, resguardo de información y control de acceso seguro a servidores locales y nube.</p>
+                    <a href="#soporte" class="card-link">Solicitar soporte sobre este servicio</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Formulario de Solicitud de Soporte -->
+        <section id="soporte" class="form-section container">
+            <h2>Formulario de Solicitud de Soporte</h2>
+
+            <div class="simulation-banner" role="status">
+                <strong>Aviso de Simulación:</strong> Este formulario es un entorno de prueba evaluativa. La confirmación es una simulación; no envía ni guarda información en ningún servidor o base de datos.
+            </div>
+
+            <form id="support-form" action="#" method="get" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" aria-describedby="nombre-help">
+                    <small id="nombre-help" class="help-text">Ingrese sus nombres y apellidos (mínimo 3 caracteres).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico corporativo <span class="required">*</span></label>
+                    <input type="email" id="correo" name="correo" required aria-describedby="correo-help">
+                    <small id="correo-help" class="help-text">Ejemplo de formato: usuario@novaservicios.test</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de incidencia <span class="required">*</span></label>
+                    <select id="tipo" name="tipo" required aria-describedby="tipo-help">
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="hardware">Hardware / Equipos</option>
+                        <option value="software">Software / Licencias</option>
+                        <option value="red">Red / Conectividad</option>
+                        <option value="otro">Otro / Consulta General</option>
+                    </select>
+                    <small id="tipo-help" class="help-text">Seleccione la categoría principal del fallo.</small>
+                </div>
+
+                <fieldset class="form-group fieldset-group">
+                    <legend>Prioridad de la incidencia <span class="required">*</span></legend>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Baja" required> Baja
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Media" required> Media
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="prioridad" value="Alta" required> Alta
+                        </label>
+                    </div>
+                    <small class="help-text">Indique el nivel de urgencia operacional.</small>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción detallada <span class="required">*</span></label>
+                    <textarea id="descripcion" name="descripcion" minlength="10" maxlength="500" required aria-describedby="desc-help"></textarea>
+                    <small id="desc-help" class="help-text">Explicación del problema (mínimo 10 y máximo 500 caracteres).</small>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Enviar Solicitud</button>
+                <div id="form-feedback" class="feedback-container" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <!-- 4. Estados de Ejemplo (Tabla Estática) -->
+        <section id="estados" class="status-section container">
+            <h2>Estados de Solicitudes de Ejemplo</h2>
+            <p>Lista estática de seguimiento de solicitudes registradas en la plataforma:</p>
+            <div class="table-wrapper">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Usuario</th>
+                            <th>Servicio</th>
+                            <th>Prioridad</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1001</td>
+                            <td>Carlos Mendoza</td>
+                            <td>Soporte e Infraestructura</td>
+                            <td><span class="badge badge-high">Alta</span></td>
+                            <td>2026-09-28</td>
+                            <td><span class="badge status-pending">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1002</td>
+                            <td>Ana Ramos</td>
+                            <td>Redes y Conectividad</td>
+                            <td><span class="badge badge-high">Alta</span></td>
+                            <td>2026-09-29</td>
+                            <td><span class="badge status-process">En proceso</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1003</td>
+                            <td>Luis Delgado</td>
+                            <td>Software y Licencias</td>
+                            <td><span class="badge badge-low">Baja</span></td>
+                            <td>2026-09-25</td>
+                            <td><span class="badge status-resolved">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1004</td>
+                            <td>Elena Torres</td>
+                            <td>Seguridad y Gestión Cloud</td>
+                            <td><span class="badge badge-medium">Media</span></td>
+                            <td>2026-09-20</td>
+                            <td><span class="badge status-closed">Cerrado/Cancelado</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1005</td>
+                            <td>Carlos Mendoza</td>
+                            <td>Soporte e Infraestructura</td>
+                            <td><span class="badge badge-high">Alta</span></td>
+                            <td>2026-09-28</td>
+                            <td><span class="badge status-pending">Pendiente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Preguntas Frecuentes (FAQs en 2 Categorías) -->
+        <section id="faq" class="faq-section container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <article class="faq-category">
+                <h3>Categoría 1: Gestión de Tickets y Tiempos</h3>
+                <details>
+                    <summary>¿Cuál es el tiempo de respuesta estimado?</summary>
+                    <p>Las solicitudes de prioridad Alta reciben atención en un plazo máximo de 2 horas. Las incidencias Media y Baja se atienden entre 24 y 48 horas habiles.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo verifico el estado de mi ticket?</summary>
+                    <p>Puedes consultar la sección "Estados" de esta plataforma para verificar la condición actual de las solicitudes simuladas.</p>
+                </details>
+            </article>
+
+            <article class="faq-category">
+                <h3>Categoría 2: Accesos y Seguridad</h3>
+                <details>
+                    <summary>¿Qué debo hacer si mi cuenta se encuentra bloqueada?</summary>
+                    <p>Selecciona la categoría "Software / Licencias" en el formulario, coloca prioridad Alta e indica tu usuario de red en la descripción.</p>
+                </details>
+                <details>
+                    <summary>¿Se atiende soporte remoto fuera de la oficina?</summary>
+                    <p>Sí, la asistencia remota se brinda mediante la conexión VPN autorizada por el área de infraestructura de Nova Servicios.</p>
+                </details>
+                <details>
+                    <summary>¿Qué información adicional agiliza la solución?</summary>
+                    <p>Adjuntar o transcribir el código de error exacto y la hora en que ocurrió el problema acorta el tiempo de diagnóstico.</p>
+                </details>
+            </article>
+        </section>
+
+        <!-- 6. Contacto -->
+        <section id="contacto" class="contact-section container">
+            <h2>Contacto y Horarios</h2>
+            <div class="contact-card">
+                <p><strong>Mesa de Ayuda - Nova Servicios S.A.C.</strong></p>
+                <p><strong>Horario Ficticio de Atención:</strong> Lunes a Viernes de 08:00 a 18:00 hrs | Sábados de 09:00 a 13:00 hrs.</p>
+                <p><strong>Correo Electrónico Ficticio:</strong> soporte@novaservicios.test</p>
+                <p><strong>Central Telefónica:</strong> +51 (1) 619-0100 Anexo 402</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nova Servicios S.A.C. Todos los derechos reservados. Examen Parcial DEW.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/ui.js"></script>
+</body>
+</html>
